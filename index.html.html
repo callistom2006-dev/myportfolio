@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxine De Guia - ECE JOURNAL</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font and base colors for the 'Beige and Black' modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            --bg-color: #f7f7f7; /* Light Beige/Off-White */
+            --text-color: #1c1c1c; /* Near Black */
+            --primary-color: #a8a29e; /* Muted Stone/Grey for subtle highlights */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-top: 6rem; /* Space for the fixed header */
+        }
+        .page-link:hover {
+            color: var(--primary-color);
+            transition: color 0.2s;
+        }
+        .active-page {
+            font-weight: 600;
+            color: var(--text-color);
+            border-bottom: 2px solid var(--text-color);
+        }
+
+        /* Responsive Hero Text Styling */
+        .hero-text {
+            font-size: 3rem; /* Default for mobile */
+        }
+        @media (min-width: 640px) {
+            .hero-text {
+                font-size: 5rem; /* Large for desktop */
+            }
+        }
+        /* Custom style for the SEAL component */
+        .seal-box {
+            color: var(--text-color);
+            border: 2px solid var(--text-color);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        /* Specific styling for Student Outcome entries */
+        .so-entry {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e7e5e4;
+        }
+        .so-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #44403c;
+        }
+        .so-description {
+            font-style: italic;
+            color: #78716c;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Bar (Fixed Top) -->
+    <header class="fixed top-0 left-0 right-0 z-10 bg-white/95 shadow-sm backdrop-blur-sm border-b border-stone-200">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <!-- Title/Logo -->
+            <div class="mb-4 sm:mb-0 text-xl font-bold tracking-wider uppercase text-stone-900">
+                MAXINE DE GUIA - ECE JOURNAL
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex flex-wrap justify-center space-x-6 text-sm font-medium">
+                <a href="#" data-target="home" class="page-link active-page">HOME</a>
+                <a href="#" data-target="about" class="page-link">ABOUT ME</a>
+                <a href="#" data-target="philosophy" class="page-link">EDUCATIONAL PHILOSOPHY</a>
+                <a href="#" data-target="outcome" class="page-link">STUDENT OUTCOME</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main id="content-container" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+
+        <!-- 1. HOME Page -->
+        <section id="home" data-page="home" class="page-content flex flex-col items-center text-center min-h-[calc(100vh-10rem)] transition-opacity duration-500 py-12">
+            
+            <!-- Welcome Title (Large) -->
+            <h1 class="hero-text font-extrabold uppercase mb-10 tracking-tight leading-none text-stone-900">
+                WELCOME TO MY WEBSITE
+            </h1>
+
+            <!-- Photo Placeholder (Rectangular) -->
+            <div class="mb-12">
+                <img
+                    src="https://i.imgur.com/XpLs1Uo.jpeg"
+                    class="w-56 h-72 sm:w-72 sm:h-96 object-cover rounded-lg shadow-xl border-4 border-white"
+                >
+            </div>
+
+            <!-- Description (Consistent Font/Size) -->
+            <div class="max-w-3xl space-y-6 text-lg leading-relaxed text-stone-700">
+                <p>
+                    I'm someone who believes that if "it's meant to be, it will be". That line reminds me to always trust the process, work hard, breathe, and let life unfold in its own time.
+                </p>
+                <p>
+                    Right now, I'm a freshman studying Electronics Engineering at the University of Santo Tomas. It's not always easy, but I love the feeling of learning something new (even when it takes a few late nights and a lot of determination lol).
+                </p>
+                <p>
+                    I try to approach life with optimism, staying positive, finding joy in small things, and being kind to myself along the way.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT ME Page -->
+        <section id="about" data-page="about" class="page-content hidden flex flex-col items-center text-center transition-opacity duration-500 py-12">
+            <h2 class="text-4xl font-bold uppercase mb-6 border-b-2 border-stone-300 pb-2 inline-block">ABOUT ME</h2>
+            
+            <!-- Centered Text Content -->
+            <div class="max-w-4xl space-y-8">
+                
+                <p class="text-lg leading-relaxed text-stone-700">
+                    Hi! I'm Maxine Juliana S. De Guia, born on October 13, 2006, and currently pursuing a degree in Electronics Engineering at the University of Santo Tomas.
+                </p>
+
+                <p class="text-lg leading-relaxed text-stone-700">
+                    My academic journey began at Mind Care and Development Academy Incorporated, where I finished my elementary education. I continued my studies at the University of Rizal System for Junior High School and La Salle College Antipolo for Senior High School. Each stage of my education helped shape who I am: curious, hardworking, and eager to learn how technology connects people and ideas.
+                </p>
+
+                <p class="text-lg leading-relaxed text-stone-700">
+                    I'm deeply interested in cloud computing, and my ultimate goal is to become a Cloud Engineer. I'm fascinated by how massive digital systems work behind the scenes—how data moves, scales, and powers the online world. I'm also actively improving my programming skills, time management, and technical communication, knowing these will be vital in my future career.
+                </p>
+
+                <p class="text-lg leading-relaxed text-stone-700">
+                    Outside academics, I enjoy reading books to recharge my mind and playing computer games to sharpen my strategic thinking and problem-solving skills that translate surprisingly well into engineering!
+                </p>
+
+                <p class="text-lg leading-relaxed text-stone-700">
+                    In the long term, I aspire to build a career in cloud infrastructure and artificial intelligence, creating innovative systems that help shape the future of technology.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 3. EDUCATIONAL PHILOSOPHY Page -->
+        <section id="philosophy" data-page="philosophy" class="page-content hidden flex flex-col items-center text-center transition-opacity duration-500 py-12">
+            <h2 class="text-4xl font-bold uppercase mb-12 border-b-2 border-stone-300 pb-2 inline-block">EDUCATIONAL PHILOSOPHY</h2>
+
+            <!-- Main container to mimic the two-column layout on the journal page -->
+            <div class="max-w-6xl mx-auto w-full flex flex-col md:flex-row gap-12 text-left">
+
+                <!-- Left Column: Large Portrait Photo Placeholder -->
+                <div class="md:w-1/3 flex-shrink-0 flex flex-col items-center text-center">
+                    <img
+                        src="https://i.imgur.com/2m1AFnX.png"
+                        class="w-full h-auto object-cover rounded-lg shadow-xl border-4 border-white"
+                        style="max-height: 500px;"
+                    >
+                </div>
+
+                <!-- Right Column: Descriptive Pillars (Mimics the 9 points across two pages, in two columns) -->
+                <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
+
+                    <!-- Point 1: Leadership and Governance -->
+                    <div class="space-y-2">
+                        <!-- Symbol Placeholder (Invisible Border) -->
+                        <div class="w-10 h-10 bg-white/0 flex items-center justify-center mb-1 rounded-lg">
+                             <img src="https://placehold.co/40x40/f7f7f7/f7f7f7?text=S1" alt="Symbol Placeholder" class="opacity-0">
+                        </div>
+                        <h3 class="text-xl font-extrabold text-stone-900">Leadership and Governance</h3>
+                        <p class="text-sm leading-relaxed text-stone-700">
+                            To develop dynamic and competent administrative and academic leaders within the organization who exemplify the leadership qualities of a true Thomasian and who ensure that the institution's vision is realized.
+                        </p>
+                    </div>
+
+                    <!-- Point 2: Thomasian Identity -->
+                    <div class="space-y-2">
+                        <!-- Symbol Placeholder (Invisible Border) -->
+                        <div class="w-10 h-10 bg-white/0 flex items-center justify-center mb-1 rounded-lg">
+                             <img src="https://placehold.co/40x40/f7f7f7/f7f7f7?text=S2" alt="Symbol Placeholder" class="opacity-0">
+                        </div>
+                        <h3 class="text-xl font-extrabold text-stone-900">Thomasian Identity</h3>
+                        <p class="text-sm leading-relaxed text-stone-700">
+                            To nurture a vibrant faith ecosystem towards forming Thomasians in the spirit of Catholic educational principles, Dominican tradition, and Thomistic ideals.
+                        </p>
+                    </div>
+
+                    <!-- Point 3: Teaching and Learning -->
+                    <div class="space-y-2">
+                        <!-- Symbol Placeholder (Invisible Border) -->
+                        <div class="w-10 h-10 bg-white/0 flex items-center justify-center mb-1 rounded-lg">
+                             <img src="https://placehold.co/40x40/f7f7f7/f7f7f7?text=S3" alt="Symbol Placeholder" class="opacity-0">
+                        </div>
+                        <h3 class="text-xl font-extrabold text-stone-900">Teaching and Learning</h3>
+                        <p class="text-sm leading-relaxed text-stone-700">
+                            To be a world-class institution of higher learning.
+                        </p>
+                    </div>
+
+                    <!-- Point 4: Research and Innovation -->
+                    <div class="space-y-2">
+                        <!-- Symbol Placeholder (Invisible Border) -->
+                        <div class="w-10 h-10 bg-white/0 flex items-center justify-center mb-1 rounded-lg">
+                             <img src="https://placehold.co/40x40/f7f7f7/f7f7f7?text=S4" alt="Symbol Placeholder" class="opacity-0">
+                        </div>
+                        <h3 class="text-xl font-extrabold text-stone-900">Research and Innovation</h3>
+                        <p class="text-sm leading-relaxed text-stone-700">
+                            To become a globally acknowledged expert in pioneering and innovative research in the arts and humanities, social science, business management and education, health and allied sciences, science and technology, and the sacred sciences.
+                        </p>
+                    </div>
+
+                    <!-- Point 5: Resource Management -->
+                    <div class="space-y-2">
+                        <!-- Symbol Placeholder (Invisible Border) -->
+                        <div class="w-10 h-10 bg-white/0 flex items-center justify-center mb-1 rounded-lg">
+                             <img src="https://placehold.co/40x40/f7f7f7/f7f7f7?text=S5" alt="Symbol Placeholder" class="opacity-0">
+                        </div>
+                        <h3 class="text-xl font-extrabold text-stone-900">Resource Management</h3>
+                        <p class="text-sm leading-relaxed text-stone-700">
+                            To provide a conducive learning and working environment with state-of-the-art facilities and resources in a self-sustainable University through the engagement of a professional Thomasian workforce that meets international standards and adapts to global change.
+                        </p>
+                    </div>
+
+                    <!-- Point 6: Public Presence -->
+                    <div class="space-y-2">
+                        <!-- Symbol Placeholder (Invisible Border) -->
+                        <div class="w-10 h-10 bg-white/0 flex items-center justify-center mb-1 rounded-lg">
+                             <img src="https://placehold.co/40x40/f7f7f7/f7f7f7?text=S6" alt="Symbol Placeholder" class="opacity-0">
+                        </div>
+                        <h3 class="text-xl font-extrabold text-stone-900">Public Presence</h3>
+                        <p class="text-sm leading-relaxed text-stone-700">
+                            To be an institution of preeminent influence in the global community by taking proactive stance in social, cultural, and moral advocacies and assuming a lead role in national and international policy formulation.
+                        </p>
+                    </div>
+
+                    <!-- Point 7: Community Development and Advocacy -->
+                    <div class="space-y-2">
+                        <!-- Symbol Placeholder (Invisible Border) -->
+                        <div class="w-10 h-10 bg-white/0 flex items-center justify-center mb-1 rounded-lg">
+                             <img src="https://placehold.co/40x40/f7f7f7/f7f7f7?text=S7" alt="Symbol Placeholder" class="opacity-0">
+                        </div>
+                        <h3 class="text-xl font-extrabold text-stone-900">Community Development and Advocacy</h3>
+                        <p class="text-sm leading-relaxed text-stone-700">
+                            To become a vibrant community of evangelizers actively engaged in social transformation through advocacy and ministry.
+                        </p>
+                    </div>
+                    
+                    <!-- Point 8: Student Welfare and Services -->
+                    <div class="space-y-2">
+                        <!-- Symbol Placeholder (Invisible Border) -->
+                        <div class="w-10 h-10 bg-white/0 flex items-center justify-center mb-1 rounded-lg">
+                             <img src="https://placehold.co/40x40/f7f7f7/f7f7f7?text=S8" alt="Symbol Placeholder" class="opacity-0">
+                        </div>
+                        <h3 class="text-xl font-extrabold text-stone-900">Student Welfare and Services</h3>
+                        <p class="text-sm leading-relaxed text-stone-700">
+                            To promote and ensure student academic achievement and life success through responsive and empirical-based services of global standards.
+                        </p>
+                    </div>
+
+                    <!-- Point 9: Internationalization -->
+                    <div class="space-y-2">
+                        <!-- Symbol Placeholder (Invisible Border) -->
+                        <div class="w-10 h-10 bg-white/0 flex items-center justify-center mb-1 rounded-lg">
+                             <img src="https://placehold.co/40x40/f7f7f7/f7f7f7?text=S9" alt="Symbol Placeholder" class="opacity-0">
+                        </div>
+                        <h3 class="text-xl font-extrabold text-stone-900">Internationalization</h3>
+                        <p class="text-sm leading-relaxed text-stone-700">
+                            To promote internationalization and integrate it into the institution's strategic plans and initiatives for the purpose of preparing students for a role in the global arena of ideas and work.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. STUDENT OUTCOME Page (Restored Full Content) -->
+        <section id="outcome" data-page="outcome" class="page-content hidden transition-opacity duration-500 py-12 flex flex-col items-center">
+            <h2 class="text-4xl font-bold uppercase mb-8 text-center border-b-2 border-stone-300 pb-2 inline-block mx-auto">STUDENT OUTCOME</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-12 w-full">
+
+                <!-- SO 1: Complex Engineering Problem -->
+                <div class="so-entry">
+                    <h3 class="so-title">SO1 – Complex Engineering Problem</h3>
+                    <p class="so-description">
+                        An ability to identify, formulate, and solve complex engineering problems by applying principles of engineering, science, and mathematics.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                        <!-- Artifacts (Image 1: Lab Form, Image 2: Computations) -->
+                        <div class="rounded-lg overflow-hidden shadow-md space-y-4">
+                            <img
+                                src="https://i.imgur.com/5kVCoWu.jpeg" 
+                                class="w-full h-auto object-cover"
+                            >
+                             <img
+                                src="https://i.imgur.com/5Flp9Vn.jpeg"
+                                class="w-full h-auto object-cover"
+                            >
+                        </div>
+                        <!-- Description Column -->
+                        <div class="text-left space-y-4">
+                            <h4 class="font-semibold text-stone-700">Brief Description:</h4>
+                            <p class="text-stone-700">
+                                My teammates and I initially listed the wrong substance for our lab safety activity, but we were able to correct it right away after rechecking our work before submission. The same thing happened with our lab computation: we were unsure about our answers at first, but through careful review and teamwork, we were able to confirm and correct them.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SO 2: Multiple Constraint -->
+                <div class="so-entry">
+                    <h3 class="so-title">SO2 – Multiple Constraint</h3>
+                    <p class="so-description">
+                        An ability to apply engineering design to produce solutions that meet specified needs with consideration for public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                        <!-- Image Column -->
+                        <div class="rounded-lg overflow-hidden shadow-md">
+                            <img
+                                src="https://i.imgur.com/yrXfTzY.jpeg"
+                                class="w-full h-auto object-cover"
+                            >
+                        </div>
+                        <!-- Description Column -->
+                        <div class="text-left space-y-4">
+                            <h4 class="font-semibold text-stone-700">Brief Description:</h4>
+                            <p class="text-stone-700">
+                                This photo was taken during our second face-to-face meeting, where we were tasked to create a solution for a garbage-related problem. My teammates and I were able to present a realistic and feasible hypothetical solution that addressed the issue effectively.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SO 3: Effective Communication -->
+                <div class="so-entry">
+                    <h3 class="so-title">SO3 – Effective Communication</h3>
+                    <p class="so-description">
+                        An ability to communicate effectively with a range of audiences.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                        <!-- Image Column -->
+                        <div class="rounded-lg overflow-hidden shadow-md">
+                            <img
+                                src="https://i.imgur.com/uyQjWbP.jpeg"
+                                class="w-full h-auto object-cover"
+                            >
+                        </div>
+                        <!-- Description Column -->
+                        <div class="text-left space-y-4">
+                            <h4 class="font-semibold text-stone-700">Brief Description:</h4>
+                            <p class="text-stone-700">
+                                This was taken after our Math MW class. During Math MW, Prof. Batulan always made our sessions interactive, encouraging us to speak in front of our 39 classmates to share our ideas and insights.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SO 4: Ethical Responsibilities -->
+                <div class="so-entry">
+                    <h3 class="so-title">SO4 – Ethical Responsibilities</h3>
+                    <p class="so-description">
+                        An ability to recognize ethical and professional responsibilities in engineering situations and make informed judgments, which must consider the impact of engineering solutions in global, economic, environmental, and societal contexts.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                        <!-- Artifacts (Image 1: Outline, Image 2: Essay content) -->
+                        <div class="rounded-lg overflow-hidden shadow-md space-y-4">
+                            <img
+                                src="https://i.imgur.com/muNQ8sa.png"
+                                class="w-full h-auto object-cover"
+                            >
+                             <img
+                                src="https://i.imgur.com/haWAUI7.png"
+                                class="w-full h-auto object-cover"
+                            >
+                        </div>
+                        <!-- Description Column -->
+                        <div class="text-left space-y-4">
+                            <h4 class="font-semibold text-stone-700">Brief Description:</h4>
+                            <p class="text-stone-700">
+                                This is my persuasive essay for my Purposive Communication class. It serves as a call to action addressing the issue of electronic waste produced by the industry. Although it was a challenging topic, I believe that my generation should become more aware and advocate for the use of green and sustainable electronics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SO 5: Team Collaboration -->
+                <div class="so-entry">
+                    <h3 class="so-title">SO5 – Team Collaboration</h3>
+                    <p class="so-description">
+                        An ability to function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet objectives.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                        <!-- Image Column -->
+                        <div class="rounded-lg overflow-hidden shadow-md">
+                            <img
+                                src="https://i.imgur.com/9MZJBFQ.jpeg"
+                                class="w-full h-auto object-cover"
+                            >
+                        </div>
+                        <!-- Description Column -->
+                        <div class="text-left space-y-4">
+                            <h4 class="font-semibold text-stone-700">Brief Description:</h4>
+                            <p class="text-stone-700">
+                                This photo was taken during our third face-to-face class, where we were tasked to come up with ideas on how to improve the school canteen. Through teamwork and collaboration, my group was able to propose a solution that would make the canteen more efficient and less time consuming for students and staff.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SO 6: Experimentation and Analysis -->
+                <div class="so-entry">
+                    <h3 class="so-title">SO6 – Experimentation and Analysis</h3>
+                    <p class="so-description">
+                        An ability to develop and conduct appropriate experimentation, analyze and interpret data, and use engineering judgment to draw conclusions.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                        <!-- Image Column -->
+                        <div class="rounded-lg overflow-hidden shadow-md">
+                            <img
+                                src="https://i.imgur.com/xF19MQv.jpeg"
+                                class="w-full h-auto object-cover"
+                            >
+                        </div>
+                        <!-- Description Column -->
+                        <div class="text-left space-y-4">
+                            <h4 class="font-semibold text-stone-700">Brief Description:</h4>
+                            <p class="text-stone-700">
+                                The picture shows the procedure we followed during the experiment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SO 7: Knowledge Specialization -->
+                <div class="so-entry">
+                    <h3 class="so-title">SO7 – Knowledge Specialization</h3>
+                    <p class="so-description">
+                        An ability to acquire and apply new knowledge as needed, using appropriate learning strategies.
+                    </p>
+                    
+                    <div class="text-center py-6 bg-stone-50 rounded-lg shadow-inner mt-4">
+                        <img
+                            src="https://placehold.co/100x100/f7f7f7/a8a29e?text=SO7"
+                            alt="Visual placeholder for Knowledge Specialization"
+                            class="mx-auto mb-4"
+                        >
+                        <h4 class="font-semibold text-stone-700">Brief Description:</h4>
+                        <p class="text-xl font-semibold text-stone-600 mt-2">
+                            COMING SOON..
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- JAVASCRIPT FOR PAGE NAVIGATION (FIX) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.page-link');
+            const pages = document.querySelectorAll('.page-content');
+
+            const showPage = (targetId) => {
+                // Hide all pages
+                pages.forEach(page => {
+                    page.classList.add('hidden');
+                });
+
+                // Show the target page
+                const targetPage = document.getElementById(targetId);
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                    // Scroll to top of the content area for smooth transition (optional)
+                    document.getElementById('content-container').scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            };
+
+            const setActiveLink = (targetId) => {
+                // Remove active class from all links
+                navLinks.forEach(link => {
+                    link.classList.remove('active-page');
+                });
+
+                // Add active class to the selected link
+                const activeLink = document.querySelector(`.page-link[data-target="${targetId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active-page');
+                }
+            };
+
+            // Handle navigation clicks
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('data-target');
+                    showPage(targetId);
+                    setActiveLink(targetId);
+                    // Update URL hash for simple state management
+                    history.pushState(null, '', `#${targetId}`);
+                });
+            });
+
+            // Initialize: Show the correct page on load (check URL hash or default to 'home')
+            const initialHash = window.location.hash.replace('#', '') || 'home';
+            if (document.getElementById(initialHash)) {
+                showPage(initialHash);
+                setActiveLink(initialHash);
+            } else {
+                showPage('home');
+                setActiveLink('home');
+            }
+
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', () => {
+                 const hash = window.location.hash.replace('#', '') || 'home';
+                 showPage(hash);
+                 setActiveLink(hash);
+            });
+
+        });
+    </script>
+</body>
+</html>
